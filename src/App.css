@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+*{
+    box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    height: 100vh;
+    background: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App{
+    width: 60vw;
+    height: 60vh;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.slider{
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
-
-.App-link {
-  color: #61dafb;
+.smallSlide{
+    color: white;
+    position: relative;
+    background: linear-gradient(to bottom right,orangered, tomato);
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slides{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.active{
+    opacity: 1;
+}
+.left, .right{
+    width: 50%;
+}
+.left{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+.left h1{
+    color: teal;
+}
+.left h3{
+    color: #333;
+    line-height: 1.8;
+}
+.right{
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+video{
+    width: 100%;
+    height: 100%;
+}
+.btn{
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    background-color: teal;
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: 0.8;
+}
+.btnFinish{
+    color: white;
+    font-size: 1.1em;
+    background-color: teal;
+    width: 60%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+}
+.btnFinish a{
+    text-decoration: none;
+}
+.btnFinish:hover{
+    background-color: lightseagreen;
+}
+.backToFirst{
+    font-family: "Times New Roman";
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+.endPage{
+    text-align: center;
+}
+.endPage p{
+    font-size: 1.1em;
+    width: 80%;
+    margin: auto;
+    line-height: 1.8;
+}
+.dotContainer{
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 50px;
+    left:20%;
+}
+.dot{
+    cursor: pointer;
+    background-color: #bbb;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+.activeDot{
+    background-color: teal;
+    border: none;
+    box-shadow: 0px 0px 3px 3px teal;
 }
