@@ -6,7 +6,9 @@ const EndPage = ({goToFirstSlide}) => {
             <button
                 className="backToFirst"
                 onClick={goToFirstSlide}
-            >Back To First</button>
+            >
+                <i className="arrow"></i>Go To First
+            </button>
         </div>
     )
 }

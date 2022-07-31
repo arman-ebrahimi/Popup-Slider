@@ -3,14 +3,45 @@
 }
 body{
     height: 100vh;
-    background: #666;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #222;
+    animation: background 6s infinite;
 }
+@keyframes background {
+    50%{
+        background-color: #444;
+    }
+    100%{
+        background-color: #222;
+    }
+}
+
 .App{
     width: 60vw;
     height: 60vh;
+}
+.onBtn{
+    width: 20vw;
+    padding: 30px 0;
+    font-size: 2em;
+    font-family: "Times New Roman";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    background-color: teal;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+}
+.onBtn:hover{
+    background-color: #008580FF;
+}
+.offSlider{
+    display: none;
 }
 .slider{
     position: relative;
@@ -113,6 +144,17 @@ video{
     border-radius: 50%;
     cursor: pointer;
     border: none;
+    line-height: 1.7em;
+}
+.backToFirst .arrow{
+    display: inline-block;
+    border: solid black;
+    border-width: 0 0 2px 2px;
+    padding: 3px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%) rotate(45deg);
 }
 .endPage{
     text-align: center;
@@ -140,6 +182,5 @@ video{
 }
 .activeDot{
     background-color: teal;
-    border: none;
     box-shadow: 0px 0px 3px 3px teal;
 }

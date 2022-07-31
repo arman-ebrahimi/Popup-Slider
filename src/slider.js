@@ -3,23 +3,23 @@ import EndPage from "./endPage";
 import NextBtn from "./nextBtn";
 import {useState} from "react";
 
-const Slider = () => {
+const Slider = ({display}) => {
 
-    const [sliderIndex, setSlideIndex] = useState(1);
+    const [sliderIndex, setSliderIndex] = useState(1);
     const limit = dataSlider.length + 1;
 
     const moveNext = () => {
-        setSlideIndex(sliderIndex + 1);
+        setSliderIndex(sliderIndex + 1);
     }
     const moveDot = (index) => {
-        setSlideIndex(index);
+        setSliderIndex(index);
     }
     const goToFirstSlide = () => {
-        setSlideIndex(1);
+        setSliderIndex(1);
     }
 
         return(
-            <div className={sliderIndex === limit ? 'smallSlide' : 'slider'}>
+            <div className={display ? (sliderIndex === limit ? 'smallSlide' : 'slider') : "offSlider"}>
                 {sliderIndex === limit ? <EndPage goToFirstSlide={goToFirstSlide} /> :
                     dataSlider.map((item, index) => {
                         return(
